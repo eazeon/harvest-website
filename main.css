@@ -101,25 +101,68 @@ ul li a.active {
   animation: defilement 40s linear infinite;
 }
 
-.carousel-track img {
-  height: 275px;
-  width: auto;
-  margin-right: 12px; /* l'espace entre les images */
+.carousel-text {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: defilement 40s linear infinite reverse; /* reverse = sens inverse */
+}
+
+.temoignage {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 12px;
+  margin-right: 60px; /* espace entre les témoignages */
+}
+
+.temoignage img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;   /* photo de profil ronde */
+  object-fit: cover;    /* recadre sans déformer */
   flex-shrink: 0;
 }
 
-/* Pause quand la souris survole le carrousel */
+.temoignage-contenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.temoignage-contenu p {
+  margin: 0;
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.pseudo {
+  margin-top: 2px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.carousel-track img {
+  height: 275px;
+  width: auto;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
 .carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+.carousel:hover .carousel-text {
   animation-play-state: paused;
 }
 
 @keyframes defilement {
   from { transform: translateX(0); }
-  to   { transform: translateX(-100%); }
+  to   { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .carousel-track { animation: none; }
+  .carousel-track, .carousel-text { animation: none; }
 }
 
 .carousel-track img {
