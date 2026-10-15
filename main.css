@@ -17,6 +17,7 @@ ul {
   padding: 0;
   background-color: #333333;
   display: flex;
+  font-family: system-ui;
 }
 
 ul li a {
@@ -69,6 +70,16 @@ ul li a.active {
   font-family: system-ui;
 }
 
+.carousel-container {
+  max-width: 2200px;
+  margin: 15px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(36, 51, 219, 0.348);
+  color:white;
+  font-family: system-ui;
+}
+
 .fixed-bg {
   background-image: url("background.jpg");
   min-height: 500px;
@@ -76,4 +87,62 @@ ul li a.active {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.carousel {
+  overflow: hidden;
+  max-width: 2200px;
+  margin: 5px auto;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+  animation: defilement 40s linear infinite;
+}
+
+.carousel-track img {
+  height: 275px;
+  width: auto;
+  margin-right: 12px; /* l'espace entre les images */
+  flex-shrink: 0;
+}
+
+/* Pause quand la souris survole le carrousel */
+.carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+@keyframes defilement {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track { animation: none; }
+}
+
+.carousel-track img {
+  cursor: zoom-in;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
 }
