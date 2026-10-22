@@ -6,6 +6,9 @@
     <title>Station Harvest</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body class="fixed-bg">
     <ul>
@@ -18,15 +21,27 @@
     <div class="page-container">
         <img class="logo" src="logo.png" alt="The French Logo" width="125" height="125">
         <h1> Bienvenue sur Station Harvest ! </h1>
-        <h2 style="text-align:center"> La première communauté Française de Space Station 14</h2>
-        <h3 style="text-align:center"> La Station Spatiale 14 recrute de nouveaux membres du personnel ! <br> Que vous soyez agent de sécurité, chercheur, médecin, concierge, ou clown, nous avons besoin de vos services !</h3>
-        <h3 style="text-align:center"> Rejoignez-nous à bord de la station spatiale la plus chaotique !</h3>
-        <a class="join-button-link" href="https://discord.gg/mp2NRxXehd">
-            <button class="join-button" type="button">Nous rejoindre !</button>
-        </a>
+        <h2> La première communauté française de Space Station 14</h2>
+        <h3> La Station Spatiale 14 recrute de nouveaux membres du personnel ! <br> Que vous soyez agent de sécurité, chercheur, médecin, concierge, ou clown, nous avons besoin de vos services !</h3>
+        <h3> Rejoignez-nous à bord de la station spatiale la plus chaotique !</h3>
+        <div class="boutons">
+            <a class="join-button-link" href="https://discord.gg/mp2NRxXehd" target="_blank" rel="noopener noreferrer">
+                <button class="join-button" type="button">Nous rejoindre !</button>
+            </a>
+            <a class="join-button-link" href="wiki.html">
+                <button class="join-button secondary-button" type="button">Découvrir le wiki</button>
+            </a>
+        </div>
     </div>
-
-    <!-- Carrousel d'images (défile vers la gauche) -->
+    <div class="bandeau" aria-hidden="true">
+        <div class="perso" style="--delai:0s"><div class="sprite clown"></div></div>
+        <div class="perso" style="--delai:-0.5s"><div class="sprite captain"></div></div>
+        <div class="perso" style="--delai:-1.1s"><div class="sprite med"></div></div>
+        <div class="perso" style="--delai:-0.2s"><div class="sprite jani"></div></div>
+        <div class="perso" style="--delai:-0.8s"><div class="sprite chef"></div></div>
+        <div class="perso" style="--delai:-1.4s"><div class="sprite engi"></div></div>
+        <div class="perso" style="--delai:-1.6s"><div class="sprite sci"></div></div>
+    </div>
     <div class="carousel-container">
         <div class="carousel">
             <div class="carousel-track">
@@ -40,7 +55,6 @@
         </div>
     </div>
 
-    <!-- Carrousel de texte (défile vers la droite) -->
     <div class="carousel-container">
         <div class="carousel">
             <div class="carousel-text">
@@ -76,7 +90,6 @@
         </div>
     </div>
 
-    <!-- Lightbox : doit rester séparée des carrousels -->
     <div class="lightbox" id="lightbox" aria-hidden="true">
         <img id="lightbox-img" src="" alt="">
     </div>
@@ -85,7 +98,6 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
 
-    // Clic sur une image du carrousel d'images : on l'agrandit
     document.querySelector('.carousel-track').addEventListener('click', (e) => {
         if (e.target.tagName === 'IMG') {
             lightboxImg.src = e.target.src;
