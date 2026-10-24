@@ -28,8 +28,8 @@
             <a class="join-button-link" href="https://discord.gg/mp2NRxXehd" target="_blank" rel="noopener noreferrer">
                 <button class="join-button" type="button">Nous rejoindre !</button>
             </a>
-            <a class="join-button-link" href="wiki.html">
-                <button class="join-button secondary-button" type="button">Découvrir le wiki</button>
+            <a class="join-button-link" href="https://spacestation14.com/about/download/" target="_blank" rel="noopener noreferrer">
+                <button class="join-button secondary-button" type="button" >Télécharger le launcher</button>
             </a>
         </div>
     </div>
@@ -41,47 +41,51 @@
         <div class="perso" style="--delai:-0.8s"><div class="sprite chef"></div></div>
         <div class="perso" style="--delai:-1.4s"><div class="sprite engi"></div></div>
         <div class="perso" style="--delai:-1.6s"><div class="sprite sci"></div></div>
+        <div class="perso" style="--delai:-0.6s"><div class="sprite sec"></div></div>
     </div>
-    <div class="carousel-container">
+    <div class="carouselcont">
         <div class="carousel">
             <div class="carousel-track">
                 <img src="screen1.webp" alt="Photo 1">
                 <img src="screen2.webp" alt="Photo 2">
                 <img src="screen3.webp" alt="Photo 3">
+                <img src="screen4.png" alt="Photo 4">
+                <img src="screen5.png" alt="Photo 5">
                 <img src="screen1.webp" alt="" aria-hidden="true">
                 <img src="screen2.webp" alt="" aria-hidden="true">
                 <img src="screen3.webp" alt="" aria-hidden="true">
+                <img src="screen4.png" alt="" aria-hidden="true">
+                <img src="screen5.png" alt="" aria-hidden="true">
             </div>
         </div>
     </div>
-
-    <div class="carousel-container">
+    <div class="carouselcont">
         <div class="carousel">
-            <div class="carousel-text">
-                <div class="temoignage">
-                    <img src="rxhalloween.jpg" alt="Photo de profil de Pseudo1">
-                    <div class="temoignage-contenu">
-                        <p>Moi quand je joue sur Harvest, je m'amuse.</p>
-                        <span class="pseudo">Pseudo1</span>
+            <div class="carouseltxt">
+                <div class="citation">
+                    <img src="lanawoodburn.png" alt="Photo de Lana Woodburn">
+                    <div class="citationtxt">
+                        <p>Qui a laissé rentrer le clown en salle d'opération ?</p>
+                        <span class="pseudo">Lana Woodburn</span>
                     </div>
                 </div>
-                <div class="temoignage">
+                <div class="citation">
                     <img src="profil2.jpg" alt="Photo de profil de Pseudo2">
-                    <div class="temoignage-contenu">
+                    <div class="citationtxt">
                         <p>J'adore Harvest, surtout quand je joue cat-maid</p>
                         <span class="pseudo">Pseudo2</span>
                     </div>
                 </div>
-                <div class="temoignage" aria-hidden="true">
+                <div class="citation" aria-hidden="true">
                     <img src="rxalloween.jpg" alt="">
-                    <div class="temoignage-contenu">
+                    <div class="citationtxt">
                         <p>Moi quand je joue sur Harvest, je m'amuse.</p>
                         <span class="pseudo">Pseudo1</span>
                     </div>
                 </div>
-                <div class="temoignage" aria-hidden="true">
+                <div class="citation" aria-hidden="true">
                     <img src="profil2.jpg" alt="">
-                    <div class="temoignage-contenu">
+                    <div class="citationtxt">
                         <p>J'adore Harvest, surtout quand je joue cat-maid</p>
                         <span class="pseudo">Pseudo2</span>
                     </div>
@@ -89,15 +93,13 @@
             </div>
         </div>
     </div>
-
     <div class="lightbox" id="lightbox" aria-hidden="true">
-        <img id="lightbox-img" src="" alt="">
+        <img id="lightboxpic" src="" alt="">
     </div>
 
 <script>
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-
+    const lightboxImg = document.getElementById('lightboxpic');
     document.querySelector('.carousel-track').addEventListener('click', (e) => {
         if (e.target.tagName === 'IMG') {
             lightboxImg.src = e.target.src;
@@ -107,15 +109,15 @@
         }
     });
 
-    function fermerLightbox() {
+    function exlightbox() {
         lightbox.classList.remove('open');
         lightbox.setAttribute('aria-hidden', 'true');
     }
 
-    lightbox.addEventListener('click', fermerLightbox);
+    lightbox.addEventListener('click', exlightbox);
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') fermerLightbox();
+        if (e.key === 'Escape') exlightbox();
     });
 </script>
 </body>
