@@ -146,6 +146,17 @@ ul li a.active {
   font-family: var(--police);
 }
 
+.footer {
+  max-width: 1600px;
+  margin: 15px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(36, 51, 219, 0.2);
+  color:white;
+  font-family: var(--police);
+  font-size: 0.65rem;
+}
+
 .carouselcont {
   max-width: 2200px;
   margin: 15px auto;
@@ -174,14 +185,14 @@ ul li a.active {
 .carousel-track {
   display: flex;
   width: max-content;
-  animation: defilement 40s linear infinite;
+  animation: defilement 40s linear infinite reverse;
 }
 
 .carouseltxt {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: defilement 40s linear infinite reverse;
+  animation: defilement 40s linear infinite;
 }
 
 .citation {
