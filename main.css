@@ -346,3 +346,21 @@ ul li a.active {
 @media (prefers-reduced-motion: reduce) {
   .sprite, .perso::after { animation: none; }
 }
+
+.video-wrapper {
+  max-width: 900px;
+  margin: 15px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(36, 51, 219, 0.2);
+}
+
+.video-wrapper video,
+.video-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 6px;
+}
