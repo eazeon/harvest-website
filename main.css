@@ -192,7 +192,7 @@ ul li a.active {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: defilement 40s linear infinite;
+  animation: defilement 60s linear infinite;
 }
 
 .citation {
